@@ -26,10 +26,15 @@ class HelloControllerTest {
 //                .andExpect(status().isOk())
 //                .andExpect(content().string("hello"));
 
+//        ResultActions resultActions = mockMvc.perform(get("/hello"));
+//        Assertions.assertAll(
+//                () -> resultActions.andExpect(status().isBadRequest()),
+//                () -> resultActions.andExpect(content().string("hello world")));
+//
         ResultActions resultActions = mockMvc.perform(get("/hello"));
         Assertions.assertAll(
-                () -> resultActions.andExpect(status().isBadRequest()),
-                () -> resultActions.andExpect(content().string("hello world")));
+                () -> resultActions.andExpect(status().isOk()),
+                () -> resultActions.andExpect(content().string("hello")));
 
     }
 }
